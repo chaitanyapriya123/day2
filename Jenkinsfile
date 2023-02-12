@@ -31,10 +31,10 @@ pipeline {
                    script {
                        retry(2){
                         sh docker image prune -a
-                        docker build -t image2:'${BUILD_NUMBER}' .
+                        docker build -t image2:${BUILD_NUMBER} .
                         docker images
                         docker image inspect httpd:2.4
-                        docker run -d -t --name apachecontainer httpd:2.4
+                        docker run -d -t --name image2 httpd:2.4
                         docker ps -aq | xargs docker stop 
                        }
                    }
