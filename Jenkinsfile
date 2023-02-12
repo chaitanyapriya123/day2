@@ -29,7 +29,7 @@ pipeline {
          stage('Building image') {
               steps{
                    script {
-                       retry(2){
+                       
                         sh docker image prune -a
                         docker build -t imageapache .
                         docker images
@@ -37,7 +37,7 @@ pipeline {
                        
                         docker ps -aq | xargs docker stop
              
-                       }
+                       
                    }
               }
          }
