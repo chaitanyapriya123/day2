@@ -1,8 +1,8 @@
 pipeline {
-//      environment {
-//     imagename = "chaitanyapriya/image2"
-// //     dockerImage = ''
-//      }
+      environment {
+     imagename = "chaitanyapriya/image2"
+     dockerImage = ''
+}
     agent any
     options { 
         timestamps ()
