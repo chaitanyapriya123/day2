@@ -23,13 +23,13 @@ pipeline {
         }
         stage('Code checkout') {
              steps {
-                  
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/chaitanyapriya123/day2.git']])  
              }
         }
          stage('Building image') {
               steps{
                    script {
-                       //retry(1){
+                       //retry(2){
                         sh '''docker image prune -a
                         docker build -t imageapache:${BUILD_NUMBER} .
                         docker images
