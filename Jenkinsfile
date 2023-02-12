@@ -1,5 +1,5 @@
 pipeline {
-      environment {
+     environment {
      imagename = "chaitanyapriya/image2"
      dockerImage = ''
 }
