@@ -34,7 +34,7 @@ pipeline {
                         docker build -t imageapache .
                         docker images
                         docker image inspect httpd:2.4
-                        docker run -d -t --name apachecontainer httpd:2.4
+                       
                         docker ps -aq | xargs docker stop
              
                        }
