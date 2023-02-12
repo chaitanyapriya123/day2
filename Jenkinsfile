@@ -29,12 +29,10 @@ pipeline {
          stage('Building image') {
               steps{
                    script {
-                       
-                        sh docker image prune -a
+                       sh docker image prune -a
                         docker build -t imageapache .
                         docker images
                         docker image inspect httpd:2.4
-                       
                         docker ps -aq | xargs docker stop
              
                        
