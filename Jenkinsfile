@@ -49,20 +49,20 @@ pipeline {
             }
         }
     }
-//     post {
-//         success {
-// //             emailext attachLog: true, body: 'Build is SUCCESSFULL', subject: 'BUILD STATUS', to: 'mujeeb9742@gmail.com'       
-//         echo "Success"
-//         }
-//         failure {
-//             emailext attachLog: true, body: 'Build is FAIlED', subject: 'BUILD STATUS', to: 'mujeeb9742@gmail.com'
-//         }
-//         unstable {
-//             emailext attachLog: true, body: 'Build is UNSTABLE', subject: 'BUILD STATUS', to: 'mujeeb9742@gmail.com'
-//         }
-//         aborted {
-//            emailext body: 'BUILD IS ABORTED', subject: 'BUILD STATUS', to: 'mujeeb9742@gmail.com'
-//         }
+    post {
+        success {
+            emailext attachLog: true, body: 'Build is SUCCESSFULL', subject: 'BUILD STATUS', to: 'sinchupriya1211@gmail.com'       
+        echo "Success"
+        }
+        failure {
+            emailext attachLog: true, body: 'Build is FAIlED', subject: 'BUILD STATUS', to: 'sinchupriya1211@gmail.com'
+        }
+        unstable {
+            emailext attachLog: true, body: 'Build is UNSTABLE', subject: 'BUILD STATUS', to: 'sinchupriya1211@gmail.com'
+        }
+        aborted {
+           emailext body: 'BUILD IS ABORTED', subject: 'BUILD STATUS', to: 'sinchupriya1211@gmail.com'
+        }
 // //         always {
 // //                 // Clean up workspace
 // // //                 deleteDir()
