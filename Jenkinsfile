@@ -1,6 +1,6 @@
 pipeline {
      environment {
-     imagename = "chaitanyapriya/image2"
+     imagename = "chaitanyapriya/task"
      dockerImage = ''
 }
     agent any
@@ -23,14 +23,15 @@ pipeline {
         }
         stage('Code checkout') {
              steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/chaitanyapriya123/day2.git']])  
+                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/chaitanyapriya123/day2.git']])
              }
         }
          stage('Building image') {
               steps{
                    script {
-                       sh docker image prune -a
-                        docker build -t imageapache .
+                       sh docker images
+                        docker image prune -a
+                        docker build -t tasks .
                         docker images
                         docker image inspect httpd:2.4
                         docker ps -aq | xargs docker stop
@@ -40,4 +41,5 @@ pipeline {
               }
          }
     }
+}
 }
