@@ -63,10 +63,10 @@ pipeline {
         aborted {
            emailext body: 'BUILD IS ABORTED', subject: 'BUILD STATUS', to: 'sinchupriya1211@gmail.com'
         }
-// //         always {
-// //                 // Clean up workspace
-// // //                 deleteDir()
-// //        }
-//     }
+       always {
+                // Clean up workspace
+               deleteDir()
+        }
+     }
  }
 }
